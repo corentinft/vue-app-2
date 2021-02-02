@@ -1,4 +1,4 @@
-# vue-app-2
+# mini-projet
 
 ## Project setup
 ```
