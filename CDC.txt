@@ -1,0 +1,29 @@
+views :
+    - menu
+        components :
+            playButton :
+                emit @play
+            resumeButton :
+                emit @resume
+        methods :
+            play -> dispatch to store -> set Cookies to start the game Bo5 : cookies = { "round": 0, "win": 0 } and set state
+            resume -> dispatch to store -> continue with cookies all ready save
+
+    - game
+        components :
+            choiceCard :
+                methods :
+                    commitChoice -> Commit dans le store
+            continueButton :
+                methods :
+                    continue -> dispatch to store -> reset Cookie to actual value and set state
+            roundResult :
+                // print 'victoire' ou 'défaite'
+        beforeMount :
+            watch on store state committed by methode commitChoice
+
+    - end
+        components :
+            menuButton :
+                methods :
+                    returnMenu : router.push('/')
